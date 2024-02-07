@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zmc Shop IDN</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #fff;
+      border: 1px solid #000;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    header {
+      background-color: #000000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .menu {
+      display: none;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu-icon {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      background: url('menu-icon.png') no-repeat;
+      background-size: cover;
+    }
+
+    h1 {
+      color: orange;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar input[type="text"] {
+      padding: 5px;
+      margin-right: 10px;
+    }
+
+    .search-bar button {
+      background-color: orange;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .sidebar {
+      background-color: #666;
+      width: 200px;
+      padding: 20px;
+      border-right: 1px solid #ccc;
+      height: 100%;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 10px;
+      color: orange;
+      cursor: pointer;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+      display: flex;
+    }
+
+    .product-container {
+      width: 70%;
+      background-color: #fff;
+      border: 1px solid #000;
+      border-radius: 5px;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .product-box {
+      width: calc(45% - 20px);
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #eee;
+      border: 3px solid #000;
+      border-radius: 5px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .product-box img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .product-box h3,
+    .product-box p {
+      color: orange;
+      margin: 0;
+    }
+
+    footer {
+      background-color: #040404;
+      padding: 10px 20px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .vertical-line {
+      border-left: 1px solid #ccc;
+      height: 100%;
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <span class="menu-icon"></span>
+        <ul class="menu">
+          <li>Lihat Saldo</li>
+          <li>Akun</li>
+          <li>Log In</li>
+          <li>Log Out</li>
+        </ul>
+      </div>
+      <h1>Zmc Shop IDN</h1>
+      <div class="search-bar">
+        <input type="text" placeholder="Cari...">
+        <button>Cari</button>
+      </div>
+    </header>
+    <div class="content">
+      <div class="sidebar">
+        <ul>
+          <li>Lihat Produk</li>
+          <li>Produk Paling Laris</li>
+          <li>Akun</li>
+          <li>Setelan</li>
+          <li>Pembelian</li>
+          <li>Metode Pembayaran</li>
+        </ul>
+      </div>
+      <div class="vertical-line"></div>
+      <div class="product-container">
+        <!-- Product boxes will be dynamically added here using JavaScript -->
+      </div>
+    </div>
+    <footer>
+      <p>By Zmc</p>
+      <p>Dilarang mengklaim situs web ini, jika mengklaim maka anda dinyatakan melanggar Undang-Undang Nomor 28 Tahun 2014, dan penjara minimal 2 tahun</p>
+    </footer>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const productContainer = document.querySelector('.product-container');
+    const sidebar = document.querySelector('.sidebar');
+    const content = document.querySelector('.content');
+    const header = document.querySelector('header');
+
+      // Sample product data
+      const products = [
+        { image: 'product1.jpg', name: 'Sketsa Murah Pendopo SMANSA', price: 'Rp. 20.000', author: 'By Zmc' },
+        { image: 'product2.jpg', name: 'Jasa Gambar Anime Tradisional No Color', price: 'Rp. 18.000', author: 'By Zmc' },
+        { image: 'product3.jpg', name: 'Jasa Gambar Anime Digital', price: 'Rp. 50.000', author: 'By Zmc' },
+        { image: 'product4.jpg', name: 'Jasa Renderan 16:9 ( Full Body )', price: 'Rp. 20.000', author: 'By Zmc' },
+        { image: 'project5.jpg', name: 'Jasa Renderan 1:1 ( Full Body )', price: 'Rp. 15.000', author: 'By Zmc' },
+        { image: 'product6.jpg', name: 'Jasa Renderan 16:9 ( Half Body )', price: 'Rp. 17.000', author: 'By Zmc' },
+        { image: 'product7.png', name: 'Jasa Renderan 1:1 ( Half Body )', price: 'Rp. 10.000', author: 'By Zmc' },
+        { image: 'product8.png', name: 'Jasa Membuat Animasi ( Sulit )', price: 'Rp. 8.000 per detik', author: 'By Zmc' },
+        { image: 'product9.png', name: 'Jasa Membuat Animasi ( Mudah )', price: 'Rp. 5.000 per detik', author: 'By Zmc' },
+        { image: 'product10.png', name: 'Jasa Pembuatan Rig', price: 'Rp. 35.000 - Rp. X ( tergantung kesulitan )', author: 'By Zmc' },
+        { image: 'product11.png', name: 'Jasa Membuat website', price: 'Rp. 50.000 - Rp. X ( tergantung kesulitan )', author: 'By Zmc' },
+        { image: 'product12.jpg', name: 'Jasa membuat kerajinan kain flanel', price: 'Rp. 10.000 - Rp. X ( tergantung kesulitan )', author: 'By Zmc' },
+        { image: 'product12.jpg', name: 'Jasa membuat animasi intro dan outro', price: 'Rp. 100.000 - Rp. X ( tergantung kesulitan ) per detik', author: 'By Zmc' }
+      ];
+
+     // Function to display products
+    function displayProducts() {
+        productContainer.style.display = 'flex';
+        sidebar.style.display = 'block';
+        content.style.display = 'flex';
+    }
+
+    // Function to display saldo
+    function displaySaldo() {
+        productContainer.innerHTML = ''; // Clear product container
+        productContainer.style.display = 'block';
+        productContainer.style.justifyContent = 'center';
+        productContainer.innerHTML = `
+            <div style="text-align: center;">
+                <h1 style="color: black;">Total Saldo :</h1>
+                <h2 style="color: green;">Rp. 500.000</h2>
+                <button style="background-color: navy; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Top Up</button>
+            </div>
+        `;
+    }
+
+    // Function to display products again and hide saldo
+    function hideSaldo() {
+        productContainer.innerHTML = ''; // Clear product container
+        addProducts(); // Add products
+        displayProducts(); // Display products
+    }
+
+    // Add products to the product container
+    function addProducts() {
+        products.forEach(product => {
+            const productBox = document.createElement('div');
+            productBox.classList.add('product-box');
+
+            const productImage = document.createElement('img');
+            productImage.src = product.image;
+            productImage.alt = product.name;
+
+            const productName = document.createElement('h3');
+            productName.textContent = product.name;
+
+            const productPrice = document.createElement('p');
+            productPrice.textContent = product.price;
+
+            const productAuthor = document.createElement('p');
+            productAuthor.textContent = product.author;
+
+            productBox.appendChild(productImage);
+            productBox.appendChild(productName);
+            productBox.appendChild(productPrice);
+            productBox.appendChild(productAuthor);
+
+            productContainer.appendChild(productBox);
+        });
+    }
+
+    // Event listener for "Lihat Saldo"
+    const lihatSaldo = document.createElement('li');
+    lihatSaldo.textContent = 'Lihat Saldo';
+    lihatSaldo.style.cursor = 'pointer';
+    lihatSaldo.addEventListener('click', displaySaldo);
+    sidebar.appendChild(lihatSaldo);
+
+    // Event listener for "Lihat Produk"
+    const lihatProduk = document.createElement('li');
+    lihatProduk.textContent = 'Lihat Produk';
+    lihatProduk.style.cursor = 'pointer';
+    lihatProduk.addEventListener('click', hideSaldo);
+    sidebar.appendChild(lihatProduk);
+
+    // Event listener for "Back" button
+    const backButton = document.createElement('button');
+    backButton.textContent = 'Back';
+    backButton.style.backgroundColor = 'blue';
+    backButton.style.color = 'white';
+    backButton.style.padding = '10px 20px';
+    backButton.style.border = 'none';
+    backButton.style.borderRadius = '5px';
+    backButton.style.cursor = 'pointer';
+    backButton.addEventListener('click', hideSaldo);
+    header.appendChild(backButton);
+
+    // Initial display of products
+    addProducts(); // Add products
+    displayProducts(); // Display products
+    })
+  </script>
+</body>
+</html>
